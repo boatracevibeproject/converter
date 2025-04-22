@@ -1,20 +1,28 @@
 {
     "name": "bvp/converter",
     "description": "The BVP Converter package for Boatrace.",
-    "keywords": ["library", "boatrace", "converter"],
+    "keywords": [
+        "boatrace",
+        "converter",
+        "library"
+    ],
     "license": "MIT",
     "type": "library",
     "authors": [
         {
             "name": "shimomo",
-            "email": "developer@shimomo.net"
+            "email": "bvp@shimomo.net"
         }
     ],
+    "support": {
+        "issues": "https://github.com/shimomo/bvp-converter/issues",
+        "source": "https://github.com/shimomo/bvp-converter"
+    },
     "require": {
         "php": "^8.2",
-        "bvp/prefecture": "^4.0",
-        "bvp/stadium": "^4.0",
-        "bvp/trimmer": "^4.0",
+        "bvp/prefecture": "^4.x-dev",
+        "bvp/stadium": "^4.x-dev",
+        "bvp/trimmer": "^4.x-dev",
         "shimomo/helper": "^1.0"
     },
     "require-dev": {
@@ -29,5 +37,7 @@
         "psr-4": {
             "BVP\\Converter\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
