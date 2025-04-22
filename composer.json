@@ -20,9 +20,9 @@
     },
     "require": {
         "php": "^8.2",
-        "bvp/prefecture": "^4.x-dev",
-        "bvp/stadium": "^4.x-dev",
-        "bvp/trimmer": "^4.x-dev",
+        "bvp/prefecture": "^5.x-dev",
+        "bvp/stadium": "^5.x-dev",
+        "bvp/trimmer": "^5.x-dev",
         "shimomo/helper": "^1.0"
     },
     "require-dev": {
