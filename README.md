@@ -1,11 +1,11 @@
 # BVP Converter
 
-[![Build Status](https://github.com/shimomo/bvp-converter/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-converter/actions?query=workflow%3Atests)
-[![codecov](https://codecov.io/gh/shimomo/bvp-converter/branch/5.x/graph/badge.svg?token=2BS8VHJR29)](https://codecov.io/gh/shimomo/bvp-converter)
-[![PHP Version Require](http://poser.pugx.org/bvp/converter/require/php)](https://packagist.org/packages/bvp/converter)
-[![Latest Stable Version](https://poser.pugx.org/bvp/converter/v/stable)](https://packagist.org/packages/bvp/converter)
-[![Latest Unstable Version](https://poser.pugx.org/bvp/converter/v/unstable)](https://packagist.org/packages/bvp/converter#5.x-dev)
-[![License](https://poser.pugx.org/bvp/converter/license)](https://packagist.org/packages/bvp/converter)
+[![tests](https://github.com/shimomo/bvp-converter/actions/workflows/tests.yml/badge.svg)](https://github.com/shimomo/bvp-converter/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/shimomo/bvp-converter/graph/badge.svg?token=2BS8VHJR29)](https://codecov.io/gh/shimomo/bvp-converter)
+[![php](http://poser.pugx.org/bvp/converter/require/php)](https://packagist.org/packages/bvp/converter)
+[![stable](https://poser.pugx.org/bvp/converter/v/stable)](https://packagist.org/packages/bvp/converter)
+[![unstable](https://poser.pugx.org/bvp/converter/v/unstable)](https://packagist.org/packages/bvp/converter#5.x-dev)
+[![license](https://poser.pugx.org/bvp/converter/license)](https://packagist.org/packages/bvp/converter)
 
 ## Installation
 ```bash
