@@ -13,4 +13,4 @@ composer require bvp/converter
 ```
 
 ## License
-The BVP Converter package is open source software licensed under the [MIT license](LICENSE).
+The BVP Converter is open source software licensed under the [MIT license](LICENSE).
