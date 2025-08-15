@@ -1,7 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/converter",
-    "description": "The BVP Converter package for Boatrace.",
+    "description": "The BVP Converter for Boatrace.",
     "keywords": [
         "boatrace",
         "converter",
@@ -39,6 +39,6 @@
             "BVP\\Converter\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
