@@ -10,29 +10,44 @@ namespace BVP\Converter\Converters;
 class WeatherConverter extends BaseConverter implements WeatherConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 5>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToWeatherNumber(string|int|null $value): ?int
+    #[\Override]
+    public function convertToWeatherNumber(int|string|null $value): ?int
     {
+        /** @psalm-var int<1, 5>|null */
         return $this->search($value)['number'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToWeatherName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToWeatherName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToWeatherShortName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToWeatherShortName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['short_name'] ?? null;
     }
 }

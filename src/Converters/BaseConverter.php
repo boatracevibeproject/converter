@@ -16,42 +16,63 @@ abstract class BaseConverter implements BaseConverterInterface
     use ConfigLoader;
 
     /**
-     * @param  \BVP\Converter\Converters\CoreConverterInterface  $converter
-     * @return void
+     * @psalm-param \BVP\Converter\Converters\CoreConverterInterface $converter
+     *
+     * @param \BVP\Converter\Converters\CoreConverterInterface $converter
      */
-    public function __construct(protected readonly CoreConverterInterface $converter) {}
+    public function __construct(protected readonly CoreConverterInterface $converter)
+    {
+        //
+    }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return array<array-key, mixed>|null
+     *
+     * @param int|string|null $value
      * @return array|null
      */
-    protected function search(string|int|null $value): ?array
+    protected function search(int|string|null $value): ?array
     {
-        if (is_string($value)) {
-            $value = $this->converter->convertToString($value);
-        } elseif (is_int($value)) {
-            $value = $this->converter->convertToInt($value);
-        } else {
+        if (is_null($value)) {
             return null;
         }
 
-        return Arr::firstWhereKeys(
-            $this->loadConfig($this->getConfigKey()),
-            $this->getAttributeKeys(),
-            Trimmer::trim($value)
-        );
+        if (is_string($value)) {
+            $value = (string) Trimmer::trim($this->converter->convertToString($value));
+        } else {
+            $value = (int) Trimmer::trim($this->converter->convertToInt($value));
+        }
+
+        $items = $this->loadConfig($this->getConfigKey());
+        $keys = $this->getAttributeKeys();
+        return Arr::firstWhereKeys($items, $keys, $value);
     }
 
     /**
+     * @psalm-return non-empty-string
+     *
      * @return string
+     * @throws \InvalidArgumentException
      */
     protected function getConfigKey(): string
     {
-        preg_match('/Converters\\\\(.+)Converter$/u', get_class($this), $matches);
-        return lcfirst($matches[1]);
+        $className = get_class($this);
+        preg_match('/Converters\\\\(.+)Converter$/u', $className, $matches);
+        $configKey = lcfirst($matches[1]);
+
+        if (empty($configKey)) {
+            throw new \InvalidArgumentException(
+                __METHOD__ . "() - Config key '{$className}' does not exist."
+            );
+        }
+
+        return $configKey;
     }
 
     /**
+     * @psalm-return list<non-empty-string>
+     *
      * @return array
      */
     protected function getAttributeKeys(): array

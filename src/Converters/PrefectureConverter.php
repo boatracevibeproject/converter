@@ -13,73 +13,132 @@ use BVP\Trimmer\Trimmer;
 class PrefectureConverter extends BaseConverter implements PrefectureConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 47>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToPrefectureNumber(string|int|null $value): ?int
+    #[\Override]
+    public function convertToPrefectureNumber(int|string|null $value): ?int
     {
+        /** @psalm-var int<1, 47>|null */
         return $this->search($value)['number'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToPrefectureName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureShortName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToPrefectureShortName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['short_name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureHiraganaName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToPrefectureHiraganaName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['hiragana_name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureKatakanaName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToPrefectureKatakanaName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['katakana_name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureEnglishName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToPrefectureEnglishName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['english_name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return array{
+     *     number: int<1, 47>,
+     *     name: non-empty-string,
+     *     short_name: non-empty-string,
+     *     hiragana_name: non-empty-string,
+     *     katakana_name: non-empty-string,
+     *     english_name: non-empty-string,
+     *     region_number: int<1, 8>,
+     *     region_name: non-empty-string,
+     *     region_short_name: non-empty-string,
+     * }|null
+     *
+     * @param int|string|null $value
      * @return array|null
      */
-    protected function search(string|int|null $value): ?array
+    #[\Override]
+    protected function search(int|string|null $value): ?array
     {
-        if (is_string($value)) {
-            $value = Trimmer::trim($this->converter->convertToString($value));
-        } elseif (is_int($value)) {
-            $value = Trimmer::trim($this->converter->convertToInt($value));
-        } else {
+        if ($value === null) {
             return null;
         }
 
+        if (is_string($value)) {
+            $value = (string) Trimmer::trim($this->converter->convertToString($value));
+        } else {
+            $value = (int) Trimmer::trim($this->converter->convertToInt($value));
+        }
+
+        /**
+         * @psalm-var array{
+         *     number: int<1, 47>,
+         *     name: non-empty-string,
+         *     short_name: non-empty-string,
+         *     hiragana_name: non-empty-string,
+         *     katakana_name: non-empty-string,
+         *     english_name: non-empty-string,
+         *     region_number: int<1, 8>,
+         *     region_name: non-empty-string,
+         *     region_short_name: non-empty-string,
+         * }
+         */
         return Prefecture::byNumber($value)
             ?? Prefecture::byName($value)
             ?? Prefecture::byShortName($value)

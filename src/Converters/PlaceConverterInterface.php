@@ -10,20 +10,29 @@ namespace BVP\Converter\Converters;
 interface PlaceConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 16>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToPlaceNumber(string|int|null $value): ?int;
+    public function convertToPlaceNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPlaceName(string|int|null $value): ?string;
+    public function convertToPlaceName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPlaceShortName(string|int|null $value): ?string;
+    public function convertToPlaceShortName(int|string|null $value): ?string;
 }

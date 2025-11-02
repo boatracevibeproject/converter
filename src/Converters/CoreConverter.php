@@ -12,7 +12,9 @@ use BVP\Trimmer\Trimmer;
 class CoreConverter implements CoreConverterInterface
 {
     /**
-     * @param array
+     * @psalm-var array<non-empty-string, non-empty-string>
+     *
+     * @var array
      */
     private array $names = [
         '小神野紀代子' => '小神野 紀代子',
@@ -23,42 +25,63 @@ class CoreConverter implements CoreConverterInterface
     ];
 
     /**
-     * @param  string|float|int|null  $value
+     * @psalm-param int|float|string|null $value
+     * @psalm-return string|null
+     *
+     * @param int|float|string|null $value
      * @return string|null
      */
-    public function convertToString(string|float|int|null $value): ?string
+    #[\Override]
+    public function convertToString(int|float|string|null $value): ?string
     {
         return is_null($value) ? null : mb_convert_kana((string) $value, 'KVas', 'UTF-8');
     }
 
     /**
-     * @param  string|float|int|null  $value
+     * @psalm-param int|float|string|null $value
+     * @psalm-return float|null
+     *
+     * @param int|float|string|null $value
      * @return float|null
      */
-    public function convertToFloat(string|float|int|null $value): ?float
+    #[\Override]
+    public function convertToFloat(int|float|string|null $value): ?float
     {
         return is_null($value) ? null : (float) $value;
     }
 
     /**
-     * @param  string|float|int|null  $value
+     * @psalm-param int|float|string|null $value
+     * @psalm-return int|null
+     *
+     * @param int|float|string|null $value
      * @return int|null
      */
-    public function convertToInt(string|float|int|null $value): ?int
+    #[\Override]
+    public function convertToInt(int|float|string|null $value): ?int
     {
         return is_null($value) ? null : (int) $value;
     }
 
     /**
-     * @param  string|null  $value
+     * @psalm-param string|null $value
+     * @psalm-return string|null
+     *
+     * @param string|null $value
      * @return string|null
      */
     public function convertToName(?string $value): ?string
     {
+        if (is_null($value)) {
+            return null;
+        }
+
         $value = $this->convertToString($value);
+        /** @psalm-var string $value */
         $value = Trimmer::trim($value);
         $pattern = '/([\p{L}\p{M}\p{N}]+)\s+([\p{L}\p{M}\p{N}]+)/u';
-        if (preg_match($pattern, $value ?? '', $matches)) {
+        if (preg_match($pattern, $value, $matches)) {
+            /** @psalm-var string */
             return Trimmer::trim($matches[1] . ' ' . $matches[2]);
         }
 

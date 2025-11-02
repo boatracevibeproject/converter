@@ -7,4 +7,7 @@ namespace BVP\Converter\Converters;
 /**
  * @author shimomo
  */
-interface BaseConverterInterface extends ConverterInterface {}
+interface BaseConverterInterface extends ConverterInterface
+{
+    //
+}

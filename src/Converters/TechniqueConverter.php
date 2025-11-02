@@ -10,29 +10,44 @@ namespace BVP\Converter\Converters;
 class TechniqueConverter extends BaseConverter implements TechniqueConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 6>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToTechniqueNumber(string|int|null $value): ?int
+    #[\Override]
+    public function convertToTechniqueNumber(int|string|null $value): ?int
     {
+        /** @psalm-var int<1, 6>|null */
         return $this->search($value)['number'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToTechniqueName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToTechniqueName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToTechniqueShortName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToTechniqueShortName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['short_name'] ?? null;
     }
 }

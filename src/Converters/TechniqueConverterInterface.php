@@ -10,20 +10,29 @@ namespace BVP\Converter\Converters;
 interface TechniqueConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 6>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToTechniqueNumber(string|int|null $value): ?int;
+    public function convertToTechniqueNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToTechniqueName(string|int|null $value): ?string;
+    public function convertToTechniqueName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToTechniqueShortName(string|int|null $value): ?string;
+    public function convertToTechniqueShortName(int|string|null $value): ?string;
 }

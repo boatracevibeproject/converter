@@ -10,14 +10,20 @@ namespace BVP\Converter\Converters;
 interface WindDirectionConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 17>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToWindDirectionNumber(string|int|null $value): ?int;
+    public function convertToWindDirectionNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToWindDirectionName(string|int|null $value): ?string;
+    public function convertToWindDirectionName(int|string|null $value): ?string;
 }

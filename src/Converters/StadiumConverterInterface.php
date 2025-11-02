@@ -10,38 +10,65 @@ namespace BVP\Converter\Converters;
 interface StadiumConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 24>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToStadiumNumber(string|int|null $value): ?int;
+    public function convertToStadiumNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToStadiumName(string|int|null $value): ?string;
+    public function convertToStadiumName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToStadiumShortName(string|int|null $value): ?string;
+    public function convertToStadiumShortName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToStadiumHiraganaName(string|int|null $value): ?string;
+    public function convertToStadiumHiraganaName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToStadiumKatakanaName(string|int|null $value): ?string;
+    public function convertToStadiumKatakanaName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToStadiumEnglishName(string|int|null $value): ?string;
+    public function convertToStadiumEnglishName(int|string|null $value): ?string;
+
+    /**
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
+     * @return string|null
+     */
+    public function convertToStadiumUrl(int|string|null $value): ?string;
 }

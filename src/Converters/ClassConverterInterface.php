@@ -10,20 +10,29 @@ namespace BVP\Converter\Converters;
 interface ClassConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 4>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToClassNumber(string|int|null $value): ?int;
+    public function convertToClassNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToClassName(string|int|null $value): ?string;
+    public function convertToClassName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToClassShortName(string|int|null $value): ?string;
+    public function convertToClassShortName(int|string|null $value): ?string;
 }

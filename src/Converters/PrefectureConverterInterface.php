@@ -10,38 +10,56 @@ namespace BVP\Converter\Converters;
 interface PrefectureConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 47>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToPrefectureNumber(string|int|null $value): ?int;
+    public function convertToPrefectureNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureName(string|int|null $value): ?string;
+    public function convertToPrefectureName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureShortName(string|int|null $value): ?string;
+    public function convertToPrefectureShortName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureHiraganaName(string|int|null $value): ?string;
+    public function convertToPrefectureHiraganaName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureKatakanaName(string|int|null $value): ?string;
+    public function convertToPrefectureKatakanaName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToPrefectureEnglishName(string|int|null $value): ?string;
+    public function convertToPrefectureEnglishName(int|string|null $value): ?string;
 }

@@ -10,20 +10,29 @@ namespace BVP\Converter\Converters;
 interface CoreConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|float|int|null  $value
+     * @psalm-param int|float|string|null $value
+     * @psalm-return string|null
+     *
+     * @param int|float|string|null $value
      * @return string|null
      */
-    public function convertToString(string|float|int|null $value): ?string;
+    public function convertToString(int|float|string|null $value): ?string;
 
     /**
-     * @param  string|float|int|null  $value
+     * @psalm-param int|float|string|null $value
+     * @psalm-return float|null
+     *
+     * @param int|float|string|null $value
      * @return float|null
      */
-    public function convertToFloat(string|float|int|null $value): ?float;
+    public function convertToFloat(int|float|string|null $value): ?float;
 
     /**
-     * @param  string|float|int|null  $value
+     * @psalm-param int|float|string|null $value
+     * @psalm-return int|null
+     *
+     * @param int|float|string|null $value
      * @return int|null
      */
-    public function convertToInt(string|float|int|null $value): ?int;
+    public function convertToInt(int|float|string|null $value): ?int;
 }

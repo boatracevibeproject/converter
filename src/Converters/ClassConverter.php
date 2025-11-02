@@ -10,29 +10,44 @@ namespace BVP\Converter\Converters;
 class ClassConverter extends BaseConverter implements ClassConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 4>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToClassNumber(string|int|null $value): ?int
+    #[\Override]
+    public function convertToClassNumber(int|string|null $value): ?int
     {
+        /** @psalm-var int<1, 4>|null */
         return $this->search($value)['number'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToClassName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToClassName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['name'] ?? null;
     }
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToClassShortName(string|int|null $value): ?string
+    #[\Override]
+    public function convertToClassShortName(int|string|null $value): ?string
     {
+        /** @psalm-var non-empty-string|null */
         return $this->search($value)['short_name'] ?? null;
     }
 }

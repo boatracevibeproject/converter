@@ -10,20 +10,29 @@ namespace BVP\Converter\Converters;
 interface WeatherConverterInterface extends ConverterInterface
 {
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return int<1, 5>|null
+     *
+     * @param int|string|null $value
      * @return int|null
      */
-    public function convertToWeatherNumber(string|int|null $value): ?int;
+    public function convertToWeatherNumber(int|string|null $value): ?int;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToWeatherName(string|int|null $value): ?string;
+    public function convertToWeatherName(int|string|null $value): ?string;
 
     /**
-     * @param  string|int|null  $value
+     * @psalm-param int|string|null $value
+     * @psalm-return non-empty-string|null
+     *
+     * @param int|string|null $value
      * @return string|null
      */
-    public function convertToWeatherShortName(string|int|null $value): ?string;
+    public function convertToWeatherShortName(int|string|null $value): ?string;
 }

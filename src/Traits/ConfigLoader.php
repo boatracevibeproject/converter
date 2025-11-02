@@ -10,14 +10,31 @@ namespace BVP\Converter\Traits;
 trait ConfigLoader
 {
     /**
+     * @psalm-var array<
+     *     non-empty-string,
+     *     non-empty-list<
+     *         non-empty-array<
+     *             non-empty-string,
+     *             int|string
+     *         >
+     *     >
+     * >
+     *
      * @var array
      */
     private array $config = [];
 
     /**
-     * @param  string  $key
-     * @return array
+     * @psalm-param non-empty-string $key
+     * @psalm-return non-empty-list<
+     *     non-empty-array<
+     *         non-empty-string,
+     *         int|string
+     *     >
+     * >
      *
+     * @param string $key
+     * @return array
      * @throws \InvalidArgumentException
      */
     private function loadConfig(string $key): array
@@ -28,7 +45,10 @@ trait ConfigLoader
 
         $fileName = __DIR__ . '/../../config/' . $key . '.php';
         if (file_exists($fileName)) {
-            return $this->config[$key] = require $fileName;
+            /** @psalm-var non-empty-list<non-empty-array<non-empty-string, int|string>> */
+            $config = require $fileName;
+
+            return $this->config[$key] = $config;
         }
 
         throw new \InvalidArgumentException(
