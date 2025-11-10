@@ -9,7 +9,7 @@ use BVP\Trimmer\Trimmer;
 /**
  * @author shimomo
  */
-class CoreParser implements CoreParserInterface
+final class CoreParser implements CoreParserInterface
 {
     /**
      * @psalm-param \BVP\Converter\Converters\CoreConverterInterface $converter
@@ -22,11 +22,11 @@ class CoreParser implements CoreParserInterface
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, 4>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     #[\Override]
     public function parseFlyingCount(?string $value): ?int
@@ -35,16 +35,16 @@ class CoreParser implements CoreParserInterface
         $value = $this->converter->convertToString($value);
         /** @psalm-var string */
         $value = Trimmer::ltrim($value, 'F');
-        /** @psalm-var int<0, 4> */
+        /** @psalm-var int<0, max> */
         return $this->converter->convertToInt($value);
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, 4>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     #[\Override]
     public function parseLateCount(?string $value): ?int
@@ -53,16 +53,16 @@ class CoreParser implements CoreParserInterface
         $value = $this->converter->convertToString($value);
         /** @psalm-var string */
         $value = Trimmer::ltrim($value, 'L');
-        /** @psalm-var int<0, 4> */
+        /** @psalm-var int<0, max> */
         return $this->converter->convertToInt($value);
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return float|null
+     * @psalm-param ?string $value
+     * @psalm-return ?float
      *
-     * @param string|null $value
-     * @return float|null
+     * @param ?string $value
+     * @return ?float
      */
     #[\Override]
     public function parseStartTiming(?string $value): ?float
@@ -83,11 +83,11 @@ class CoreParser implements CoreParserInterface
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, max>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     #[\Override]
     public function parseWind(?string $value): ?int
@@ -101,11 +101,11 @@ class CoreParser implements CoreParserInterface
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<1, 17>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<1, 17>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     #[\Override]
     public function parseWindDirectionNumber(?string $value): ?int
@@ -123,11 +123,11 @@ class CoreParser implements CoreParserInterface
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, max>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     #[\Override]
     public function parseWave(?string $value): ?int
@@ -141,11 +141,11 @@ class CoreParser implements CoreParserInterface
     }
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return float|null
+     * @psalm-param ?string $value
+     * @psalm-return ?float
      *
-     * @param string|null $value
-     * @return float|null
+     * @param ?string $value
+     * @return ?float
      */
     #[\Override]
     public function parseTemperature(?string $value): ?float

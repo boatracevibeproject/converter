@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class CoreParserDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: int<0, 4>|null
+     * }>
+     *
      * @return array
      */
     public static function parseFlyingCountProvider(): array
@@ -24,6 +29,11 @@ final class CoreParserDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: int<0, 4>|null
+     * }>
+     *
      * @return array
      */
     public static function parseLateCountProvider(): array
@@ -38,6 +48,11 @@ final class CoreParserDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: float|null
+     * }>
+     *
      * @return array
      */
     public static function parseStartTimingProvider(): array
@@ -57,6 +72,11 @@ final class CoreParserDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: int<0, max>|null
+     * }>
+     *
      * @return array
      */
     public static function parseWindProvider(): array
@@ -70,6 +90,11 @@ final class CoreParserDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: int<1, 17>|null
+     * }>
+     *
      * @return array
      */
     public static function parseWindDirectionNumberProvider(): array
@@ -83,6 +108,11 @@ final class CoreParserDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: int<0, max>|null
+     * }>
+     *
      * @return array
      */
     public static function parseWaveProvider(): array
@@ -96,6 +126,11 @@ final class CoreParserDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: float|null
+     * }>
+     *
      * @return array
      */
     public static function parseTemperatureProvider(): array

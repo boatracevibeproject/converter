@@ -11,28 +11,28 @@ interface TechniqueConverterInterface extends ConverterInterface
 {
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return int<1, 6>|null
+     * @psalm-return ?int<1, 6>
      *
      * @param int|string|null $value
-     * @return int|null
+     * @return ?int
      */
     public function convertToTechniqueNumber(int|string|null $value): ?int;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToTechniqueName(int|string|null $value): ?string;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToTechniqueShortName(int|string|null $value): ?string;
 }

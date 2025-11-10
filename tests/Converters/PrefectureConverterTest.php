@@ -15,13 +15,19 @@ use PHPUnit\Framework\TestCase;
 final class PrefectureConverterTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Converter\Converters\PrefectureConverter
+     *
      * @var \BVP\Converter\Converters\PrefectureConverter
      */
     protected PrefectureConverter $converter;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->converter = new PrefectureConverter(
@@ -30,8 +36,12 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int<1, 47>|non-empty-string|null> $arguments
+     * @psalm-param int<1, 47>|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param int|null $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureConverterDataProvider::class, 'convertToPrefectureNumberProvider')]
@@ -41,8 +51,12 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 47>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureConverterDataProvider::class, 'convertToPrefectureNameProvider')]
@@ -52,8 +66,12 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 47>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureConverterDataProvider::class, 'convertToPrefectureShortNameProvider')]
@@ -63,8 +81,12 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 47>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureConverterDataProvider::class, 'convertToPrefectureHiraganaNameProvider')]
@@ -74,8 +96,12 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 47>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureConverterDataProvider::class, 'convertToPrefectureKatakanaNameProvider')]
@@ -85,8 +111,12 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 47>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureConverterDataProvider::class, 'convertToPrefectureEnglishNameProvider')]

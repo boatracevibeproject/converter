@@ -11,19 +11,19 @@ interface WindDirectionConverterInterface extends ConverterInterface
 {
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return int<1, 17>|null
+     * @psalm-return ?int<1, 17>
      *
      * @param int|string|null $value
-     * @return int|null
+     * @return ?int
      */
     public function convertToWindDirectionNumber(int|string|null $value): ?int;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToWindDirectionName(int|string|null $value): ?string;
 }

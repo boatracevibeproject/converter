@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class PlaceConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 16>|non-empty-string|null>,
+     *     expected: int<1, 16>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPlaceNumberProvider(): array
@@ -24,6 +29,11 @@ final class PlaceConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 16>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPlaceNameProvider(): array
@@ -38,6 +48,11 @@ final class PlaceConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 16>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPlaceShortNameProvider(): array

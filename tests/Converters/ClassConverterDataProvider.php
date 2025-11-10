@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class ClassConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 4>|non-empty-string|null>,
+     *     expected: int<1, 4>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToClassNumberProvider(): array
@@ -24,6 +29,11 @@ final class ClassConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 4>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToClassNameProvider(): array
@@ -38,6 +48,11 @@ final class ClassConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 4>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToClassShortNameProvider(): array

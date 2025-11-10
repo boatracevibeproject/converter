@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class StadiumConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: int<1, 24>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumNumberProvider(): array
@@ -28,6 +33,11 @@ final class StadiumConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumNameProvider(): array
@@ -46,6 +56,11 @@ final class StadiumConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumShortNameProvider(): array
@@ -64,6 +79,11 @@ final class StadiumConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumHiraganaNameProvider(): array
@@ -82,6 +102,11 @@ final class StadiumConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumKatakanaNameProvider(): array
@@ -100,6 +125,11 @@ final class StadiumConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumEnglishNameProvider(): array
@@ -118,6 +148,11 @@ final class StadiumConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumUrlProvider(): array

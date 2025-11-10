@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class PrefectureConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: int<1, 47>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureNumberProvider(): array
@@ -27,6 +32,11 @@ final class PrefectureConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureNameProvider(): array
@@ -44,6 +54,11 @@ final class PrefectureConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureShortNameProvider(): array
@@ -61,6 +76,11 @@ final class PrefectureConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureHiraganaNameProvider(): array
@@ -78,6 +98,11 @@ final class PrefectureConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureKatakanaNameProvider(): array
@@ -95,6 +120,11 @@ final class PrefectureConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureEnglishNameProvider(): array

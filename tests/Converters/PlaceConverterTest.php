@@ -15,13 +15,19 @@ use PHPUnit\Framework\TestCase;
 final class PlaceConverterTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Converter\Converters\PlaceConverter
+     *
      * @var \BVP\Converter\Converters\PlaceConverter
      */
     protected PlaceConverter $converter;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->converter = new PlaceConverter(
@@ -30,8 +36,12 @@ final class PlaceConverterTest extends TestCase
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int<1, 16>|non-empty-string|null> $arguments
+     * @psalm-param int<1, 16>|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param int|null $expected
      * @return void
      */
     #[DataProviderExternal(PlaceConverterDataProvider::class, 'convertToPlaceNumberProvider')]
@@ -41,8 +51,12 @@ final class PlaceConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 16>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PlaceConverterDataProvider::class, 'convertToPlaceNameProvider')]
@@ -52,8 +66,12 @@ final class PlaceConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 16>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(PlaceConverterDataProvider::class, 'convertToPlaceShortNameProvider')]

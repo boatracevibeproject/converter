@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class WindDirectionConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 17>|non-empty-string|null>,
+     *     expected: int<1, 17>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToWindDirectionNumberProvider(): array
@@ -23,6 +28,11 @@ final class WindDirectionConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 17>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToWindDirectionNameProvider(): array

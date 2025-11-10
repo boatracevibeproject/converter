@@ -1,0 +1,14 @@
+<?php
+
+namespace BVP\Prefecture;
+
+/**
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byNumber(int|string $value)
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byName(int|string $value)
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byShortName(int|string $value)
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byHiraganaName(int|string $value)
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byKatakanaName(int|string $value)
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byEnglishName(int|string $value)
+ * @psalm-method static ?array<non-empty-string, int<1, 47>|non-empty-string> byUrl(int|string $value)
+ */
+final class Prefecture {}

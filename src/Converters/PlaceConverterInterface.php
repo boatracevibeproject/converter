@@ -11,28 +11,28 @@ interface PlaceConverterInterface extends ConverterInterface
 {
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return int<1, 16>|null
+     * @psalm-return ?int<1, 16>
      *
      * @param int|string|null $value
-     * @return int|null
+     * @return ?int
      */
     public function convertToPlaceNumber(int|string|null $value): ?int;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToPlaceName(int|string|null $value): ?string;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToPlaceShortName(int|string|null $value): ?string;
 }

@@ -10,65 +10,65 @@ namespace BVP\Converter\Converters;
 interface CoreParserInterface extends ConverterInterface
 {
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, 4>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     public function parseFlyingCount(?string $value): ?int;
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, 4>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
      * @param string|null $value
-     * @return int|null
+     * @return ?int
      */
     public function parseLateCount(?string $value): ?int;
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return float|null
+     * @psalm-param ?string $value
+     * @psalm-return ?float
      *
-     * @param string|null $value
-     * @return float|null
+     * @param ?string $value
+     * @return ?float
      */
     public function parseStartTiming(?string $value): ?float;
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, max>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     public function parseWind(?string $value): ?int;
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<1, 17>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<1, 17>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     public function parseWindDirectionNumber(?string $value): ?int;
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return int<0, max>|null
+     * @psalm-param ?string $value
+     * @psalm-return ?int<0, max>
      *
-     * @param string|null $value
-     * @return int|null
+     * @param ?string $value
+     * @return ?int
      */
     public function parseWave(?string $value): ?int;
 
     /**
-     * @psalm-param string|null $value
-     * @psalm-return float|null
+     * @psalm-param ?string $value
+     * @psalm-return ?float
      *
-     * @param string|null $value
-     * @return float|null
+     * @param ?string $value
+     * @return ?float
      */
     public function parseTemperature(?string $value): ?float;
 }

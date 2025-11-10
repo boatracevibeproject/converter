@@ -15,13 +15,19 @@ use PHPUnit\Framework\TestCase;
 final class WeatherConverterTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Converter\Converters\WeatherConverter
+     *
      * @var \BVP\Converter\Converters\WeatherConverter
      */
     protected WeatherConverter $converter;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->converter = new WeatherConverter(
@@ -30,8 +36,12 @@ final class WeatherConverterTest extends TestCase
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int<1, 5>|non-empty-string|null> $arguments
+     * @psalm-param int<1, 5>|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param int|null $expected
      * @return void
      */
     #[DataProviderExternal(WeatherConverterDataProvider::class, 'convertToWeatherNumberProvider')]
@@ -41,8 +51,12 @@ final class WeatherConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 5>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(WeatherConverterDataProvider::class, 'convertToWeatherNameProvider')]
@@ -52,8 +66,12 @@ final class WeatherConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 5>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(WeatherConverterDataProvider::class, 'convertToWeatherShortNameProvider')]

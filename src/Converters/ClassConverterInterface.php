@@ -11,28 +11,28 @@ interface ClassConverterInterface extends ConverterInterface
 {
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return int<1, 4>|null
+     * @psalm-return ?int<1, 4>
      *
      * @param int|string|null $value
-     * @return int|null
+     * @return ?int
      */
     public function convertToClassNumber(int|string|null $value): ?int;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToClassName(int|string|null $value): ?string;
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return non-empty-string|null
+     * @psalm-return ?non-empty-string
      *
      * @param int|string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToClassShortName(int|string|null $value): ?string;
 }

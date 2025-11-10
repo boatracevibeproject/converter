@@ -9,7 +9,7 @@ use BVP\Trimmer\Trimmer;
 /**
  * @author shimomo
  */
-class CoreConverter implements CoreConverterInterface
+final class CoreConverter implements CoreConverterInterface
 {
     /**
      * @psalm-var array<non-empty-string, non-empty-string>
@@ -26,10 +26,10 @@ class CoreConverter implements CoreConverterInterface
 
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return string|null
+     * @psalm-return ?string
      *
      * @param int|float|string|null $value
-     * @return string|null
+     * @return ?string
      */
     #[\Override]
     public function convertToString(int|float|string|null $value): ?string
@@ -39,10 +39,10 @@ class CoreConverter implements CoreConverterInterface
 
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return float|null
+     * @psalm-return ?float
      *
      * @param int|float|string|null $value
-     * @return float|null
+     * @return ?float
      */
     #[\Override]
     public function convertToFloat(int|float|string|null $value): ?float
@@ -52,10 +52,10 @@ class CoreConverter implements CoreConverterInterface
 
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return int|null
+     * @psalm-return ?int
      *
      * @param int|float|string|null $value
-     * @return int|null
+     * @return ?int
      */
     #[\Override]
     public function convertToInt(int|float|string|null $value): ?int
@@ -65,10 +65,10 @@ class CoreConverter implements CoreConverterInterface
 
     /**
      * @psalm-param string|null $value
-     * @psalm-return string|null
+     * @psalm-return ?string
      *
      * @param string|null $value
-     * @return string|null
+     * @return ?string
      */
     public function convertToName(?string $value): ?string
     {

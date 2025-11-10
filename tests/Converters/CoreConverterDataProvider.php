@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class CoreConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int|float|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToStringProvider(): array
@@ -26,6 +31,11 @@ final class CoreConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int|float|non-empty-string|null>,
+     *     expected: int|null
+     * }>
+     *
      * @return array
      */
     public static function convertToIntProvider(): array
@@ -42,6 +52,11 @@ final class CoreConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int|float|non-empty-string|null>,
+     *     expected: float|null
+     * }>
+     *
      * @return array
      */
     public static function convertToFloatProvider(): array
@@ -58,6 +73,11 @@ final class CoreConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToNameProvider(): array

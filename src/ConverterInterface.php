@@ -10,19 +10,19 @@ namespace BVP\Converter;
 interface ConverterInterface
 {
     /**
-     * @psalm-param \BVP\Converter\ConverterCoreInterface|null $converterCore
+     * @psalm-param ?\BVP\Converter\ConverterCoreInterface $converterCore
      * @psalm-return \BVP\Converter\ConverterInterface
      *
-     * @param \BVP\Converter\ConverterCoreInterface|null $converterCore
+     * @param ?\BVP\Converter\ConverterCoreInterface $converterCore
      * @return \BVP\Converter\ConverterInterface
      */
     public static function getInstance(?ConverterCoreInterface $converterCore = null): ConverterInterface;
 
     /**
-     * @psalm-param \BVP\Converter\ConverterCoreInterface|null $converterCore
+     * @psalm-param ?\BVP\Converter\ConverterCoreInterface $converterCore
      * @psalm-return \BVP\Converter\ConverterInterface
      *
-     * @param \BVP\Converter\ConverterCoreInterface|null $converterCore
+     * @param ?\BVP\Converter\ConverterCoreInterface $converterCore
      * @return \BVP\Converter\ConverterInterface
      */
     public static function createInstance(?ConverterCoreInterface $converterCore = null): ConverterInterface;

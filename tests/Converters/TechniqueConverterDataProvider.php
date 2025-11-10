@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class TechniqueConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 6>|non-empty-string|null>,
+     *     expected: int<1, 6>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToTechniqueNumberProvider(): array
@@ -24,6 +29,11 @@ final class TechniqueConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 6>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToTechniqueNameProvider(): array
@@ -38,6 +48,11 @@ final class TechniqueConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 6>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToTechniqueShortNameProvider(): array

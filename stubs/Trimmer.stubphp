@@ -1,0 +1,10 @@
+<?php
+
+namespace BVP\Trimmer;
+
+/**
+ * @psalm-method static mixed trim(mixed $items, ?string $characters = null, ?string $encoding = null)
+ * @psalm-method static mixed ltrim(mixed $items, ?string $characters = null, ?string $encoding = null)
+ * @psalm-method static mixed rtrim(mixed $items, ?string $characters = null, ?string $encoding = null)
+ */
+final class Trimmer {}

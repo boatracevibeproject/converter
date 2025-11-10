@@ -14,21 +14,31 @@ use PHPUnit\Framework\TestCase;
 final class CoreConverterTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Converter\Converters\CoreConverter
+     *
      * @var \BVP\Converter\Converters\CoreConverter
      */
     protected CoreConverter $converter;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->converter = new CoreConverter();
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|float|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToStringProvider')]
@@ -38,8 +48,12 @@ final class CoreConverterTest extends TestCase
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|float|non-empty-string|null> $arguments
+     * @psalm-param int|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param int|null $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToIntProvider')]
@@ -49,8 +63,12 @@ final class CoreConverterTest extends TestCase
     }
 
     /**
-     * @param  array       $arguments
-     * @param  float|null  $expected
+     * @psalm-param non-empty-list<int|float|non-empty-string|null> $arguments
+     * @psalm-param float|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param float|null $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToFloatProvider')]
@@ -60,8 +78,12 @@ final class CoreConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToNameProvider')]

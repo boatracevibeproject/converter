@@ -71,7 +71,7 @@ abstract class BaseConverter implements BaseConverterInterface
     }
 
     /**
-     * @psalm-return list<non-empty-string>
+     * @psalm-return non-empty-list<non-empty-string>
      *
      * @return array
      */

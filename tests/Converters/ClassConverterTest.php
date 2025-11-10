@@ -15,13 +15,19 @@ use PHPUnit\Framework\TestCase;
 final class ClassConverterTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Converter\Converters\ClassConverter
+     *
      * @var \BVP\Converter\Converters\ClassConverter
      */
     protected ClassConverter $converter;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->converter = new ClassConverter(
@@ -30,8 +36,12 @@ final class ClassConverterTest extends TestCase
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int<1, 4>|non-empty-string|null> $arguments
+     * @psalm-param int<1, 4>|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param int|null $expected
      * @return void
      */
     #[DataProviderExternal(ClassConverterDataProvider::class, 'convertToClassNumberProvider')]
@@ -41,8 +51,12 @@ final class ClassConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 4>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(ClassConverterDataProvider::class, 'convertToClassNameProvider')]
@@ -52,8 +66,12 @@ final class ClassConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 4>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(ClassConverterDataProvider::class, 'convertToClassShortNameProvider')]

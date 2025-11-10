@@ -15,13 +15,19 @@ use PHPUnit\Framework\TestCase;
 final class WindDirectionConverterTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Converter\Converters\WindDirectionConverter
+     *
      * @var \BVP\Converter\Converters\WindDirectionConverter
      */
     protected WindDirectionConverter $converter;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->converter = new WindDirectionConverter(
@@ -30,8 +36,12 @@ final class WindDirectionConverterTest extends TestCase
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int<1, 17>|non-empty-string|null> $arguments
+     * @psalm-param int<1, 17>|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param int|null $expected
      * @return void
      */
     #[DataProviderExternal(WindDirectionConverterDataProvider::class, 'convertToWindDirectionNumberProvider')]
@@ -41,8 +51,12 @@ final class WindDirectionConverterTest extends TestCase
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int<1, 17>|non-empty-string|null> $arguments
+     * @psalm-param non-empty-string|null $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param string|null $expected
      * @return void
      */
     #[DataProviderExternal(WindDirectionConverterDataProvider::class, 'convertToWindDirectionNameProvider')]

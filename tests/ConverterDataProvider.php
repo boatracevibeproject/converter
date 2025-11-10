@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests;
 final class ConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 4>|non-empty-string|null>,
+     *     expected: ?int<1, 4>
+     * }>
+     *
      * @return array
      */
     public static function convertToClassNumberProvider(): array
@@ -24,6 +29,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 4>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToClassNameProvider(): array
@@ -38,6 +48,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 4>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToClassShortNameProvider(): array
@@ -52,6 +67,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int|float|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStringProvider(): array
@@ -68,6 +88,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int|float|non-empty-string|null>,
+     *     expected: ?int
+     * }>
+     *
      * @return array
      */
     public static function convertToIntProvider(): array
@@ -84,6 +109,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int|float|non-empty-string|null>,
+     *     expected: ?float
+     * }>
+     *
      * @return array
      */
     public static function convertToFloatProvider(): array
@@ -100,6 +130,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToNameProvider(): array
@@ -117,6 +152,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, max>
+     * }>
+     *
      * @return array
      */
     public static function parseFlyingCountProvider(): array
@@ -131,6 +171,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, max>
+     * }>
+     *
      * @return array
      */
     public static function parseLateCountProvider(): array
@@ -145,6 +190,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?float
+     * }>
+     *
      * @return array
      */
     public static function parseStartTimingProvider(): array
@@ -164,6 +214,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, max>
+     * }>
+     *
      * @return array
      */
     public static function parseWindProvider(): array
@@ -177,6 +232,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<1, 17>
+     * }>
+     *
      * @return array
      */
     public static function parseWindDirectionNumberProvider(): array
@@ -190,6 +250,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, max>
+     * }>
+     *
      * @return array
      */
     public static function parseWaveProvider(): array
@@ -203,6 +268,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?float
+     * }>
+     *
      * @return array
      */
     public static function parseTemperatureProvider(): array
@@ -218,6 +288,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 16>|non-empty-string|null>,
+     *     expected: ?int<1, 16>
+     * }>
+     *
      * @return array
      */
     public static function convertToPlaceNumberProvider(): array
@@ -232,6 +307,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 16>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPlaceNameProvider(): array
@@ -246,6 +326,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 16>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPlaceShortNameProvider(): array
@@ -260,6 +345,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: ?int<1, 47>
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureNumberProvider(): array
@@ -277,6 +367,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureNameProvider(): array
@@ -294,6 +389,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureShortNameProvider(): array
@@ -311,6 +411,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureHiraganaNameProvider(): array
@@ -328,6 +433,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureKatakanaNameProvider(): array
@@ -345,6 +455,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToPrefectureEnglishNameProvider(): array
@@ -362,6 +477,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?int<1, 24>
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumNumberProvider(): array
@@ -380,6 +500,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumNameProvider(): array
@@ -398,6 +523,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumShortNameProvider(): array
@@ -416,6 +546,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumHiraganaNameProvider(): array
@@ -434,6 +569,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumKatakanaNameProvider(): array
@@ -452,6 +592,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumEnglishNameProvider(): array
@@ -470,6 +615,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 24>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToStadiumUrlProvider(): array
@@ -488,6 +638,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 6>|non-empty-string|null>,
+     *     expected: ?int<1, 6>
+     * }>
+     *
      * @return array
      */
     public static function convertToTechniqueNumberProvider(): array
@@ -502,6 +657,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 6>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToTechniqueNameProvider(): array
@@ -516,6 +676,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 6>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToTechniqueShortNameProvider(): array
@@ -530,6 +695,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
+     *     expected: ?int<1, 5>
+     * }>
+     *
      * @return array
      */
     public static function convertToWeatherNumberProvider(): array
@@ -544,6 +714,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToWeatherNameProvider(): array
@@ -558,6 +733,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToWeatherShortNameProvider(): array
@@ -572,6 +752,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 17>|non-empty-string|null>,
+     *     expected: ?int<1, 17>
+     * }>
+     *
      * @return array
      */
     public static function convertToWindDirectionNumberProvider(): array
@@ -585,6 +770,11 @@ final class ConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 17>|non-empty-string|null>,
+     *     expected: ?non-empty-string
+     * }>
+     *
      * @return array
      */
     public static function convertToWindDirectionNameProvider(): array

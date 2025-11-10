@@ -10,6 +10,11 @@ namespace BVP\Converter\Tests\Converters;
 final class WeatherConverterDataProvider
 {
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
+     *     expected: int<1, 5>|null
+     * }>
+     *
      * @return array
      */
     public static function convertToWeatherNumberProvider(): array
@@ -24,6 +29,11 @@ final class WeatherConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToWeatherNameProvider(): array
@@ -38,6 +48,11 @@ final class WeatherConverterDataProvider
     }
 
     /**
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
+     *     expected: non-empty-string|null
+     * }>
+     *
      * @return array
      */
     public static function convertToWeatherShortNameProvider(): array

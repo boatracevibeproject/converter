@@ -15,424 +15,578 @@ use PHPUnit\Framework\TestCase;
 final class ConverterTest extends TestCase
 {
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 4> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToClassNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToClassNumberProvider')]
     public function testConvertToClassNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToClassNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToClassNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToClassNameProvider')]
     public function testConvertToClassName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToClassName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToClassShortNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToClassShortNameProvider')]
     public function testConvertToClassShortName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToClassShortName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|float|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStringProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStringProvider')]
     public function testConvertToString(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToString(...$arguments));
     }
 
     /**
-     * @param  array       $arguments
-     * @param  float|null  $expected
+     * @psalm-param non-empty-list<int|float|string|null> $arguments
+     * @psalm-param ?float $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?float $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToFloatProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToFloatProvider')]
     public function testConvertToFloat(array $arguments, ?float $expected): void
     {
         $this->assertSame($expected, Converter::convertToFloat(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|float|string|null> $arguments
+     * @psalm-param ?int $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToIntProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToIntProvider')]
     public function testConvertToInt(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToInt(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToNameProvider')]
     public function testConvertToName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToName(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?int<0, max> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseFlyingCountProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseFlyingCountProvider')]
     public function testParseFlyingCount(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::parseFlyingCount(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?int<0, max> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseLateCountProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseLateCountProvider')]
     public function testParseLateCount(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::parseLateCount(...$arguments));
     }
 
     /**
-     * @param  array       $arguments
-     * @param  float|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?float $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?float $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseStartTimingProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseStartTimingProvider')]
     public function testParseStartTiming(array $arguments, ?float $expected): void
     {
         $this->assertSame($expected, Converter::parseStartTiming(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?int<0, max> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseWindProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseWindProvider')]
     public function testParseWind(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::parseWind(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?int<1, 17> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseWindDirectionNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseWindDirectionNumberProvider')]
     public function testParseWindDirectionNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::parseWindDirectionNumber(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?int<0, max> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseWaveProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseWaveProvider')]
     public function testParseWave(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::parseWave(...$arguments));
     }
 
     /**
-     * @param  array       $arguments
-     * @param  float|null  $expected
+     * @psalm-param non-empty-list<?string> $arguments
+     * @psalm-param ?float $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?float $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'parseTemperatureProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseTemperatureProvider')]
     public function testParseTemperature(array $arguments, ?float $expected): void
     {
         $this->assertSame($expected, Converter::parseTemperature(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 16> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPlaceNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPlaceNumberProvider')]
     public function testConvertToPlaceNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToPlaceNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPlaceNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPlaceNameProvider')]
     public function testConvertToPlaceName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPlaceName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPlaceShortNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPlaceShortNameProvider')]
     public function testConvertToPlaceShortName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPlaceShortName(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 47> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPrefectureNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPrefectureNumberProvider')]
     public function testConvertToPrefectureNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToPrefectureNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPrefectureNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPrefectureNameProvider')]
     public function testConvertToPrefectureName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPrefectureName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPrefectureShortNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPrefectureShortNameProvider')]
     public function testConvertToPrefectureShortName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPrefectureShortName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPrefectureHiraganaNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPrefectureHiraganaNameProvider')]
     public function testConvertToPrefectureHiraganaName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPrefectureHiraganaName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPrefectureKatakanaNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPrefectureKatakanaNameProvider')]
     public function testConvertToPrefectureKatakanaName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPrefectureKatakanaName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToPrefectureEnglishNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToPrefectureEnglishNameProvider')]
     public function testConvertToPrefectureEnglishName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToPrefectureEnglishName(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 24> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumNumberProvider')]
     public function testConvertToStadiumNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumNameProvider')]
     public function testConvertToStadiumName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumShortNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumShortNameProvider')]
     public function testConvertToStadiumShortName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumShortName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumHiraganaNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumHiraganaNameProvider')]
     public function testConvertToStadiumHiraganaName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumHiraganaName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumKatakanaNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumKatakanaNameProvider')]
     public function testConvertToStadiumKatakanaName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumKatakanaName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumEnglishNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumEnglishNameProvider')]
     public function testConvertToStadiumEnglishName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumEnglishName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToStadiumUrlProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToStadiumUrlProvider')]
     public function testConvertToStadiumUrl(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToStadiumUrl(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 6> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToTechniqueNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToTechniqueNumberProvider')]
     public function testConvertToTechniqueNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToTechniqueNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToTechniqueNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToTechniqueNameProvider')]
     public function testConvertToTechniqueName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToTechniqueName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToTechniqueShortNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToTechniqueShortNameProvider')]
     public function testConvertToTechniqueShortName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToTechniqueShortName(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 5> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToWeatherNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToWeatherNumberProvider')]
     public function testConvertToWeatherNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToWeatherNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToWeatherNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToWeatherNameProvider')]
     public function testConvertToWeatherName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToWeatherName(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToWeatherShortNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToWeatherShortNameProvider')]
     public function testConvertToWeatherShortName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToWeatherShortName(...$arguments));
     }
 
     /**
-     * @param  array     $arguments
-     * @param  int|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?int<1, 17> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToWindDirectionNumberProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToWindDirectionNumberProvider')]
     public function testConvertToWindDirectionNumber(array $arguments, ?int $expected): void
     {
         $this->assertSame($expected, Converter::convertToWindDirectionNumber(...$arguments));
     }
 
     /**
-     * @param  array        $arguments
-     * @param  string|null  $expected
+     * @psalm-param non-empty-list<int|string|null> $arguments
+     * @psalm-param ?non-empty-string $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param ?string $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterCoreDataProvider::class, 'convertToWindDirectionNameProvider')]
+    #[DataProviderExternal(ConverterDataProvider::class, 'convertToWindDirectionNameProvider')]
     public function testConvertToWindDirectionName(array $arguments, ?string $expected): void
     {
         $this->assertSame($expected, Converter::convertToWindDirectionName(...$arguments));
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testInvalidTooFewArguments(): void
@@ -444,10 +598,13 @@ final class ConverterTest extends TestCase
             "0 passed and exactly 1 expected."
         );
 
+        /** @psalm-suppress UndefinedMagicMethod */
         Converter::invalid();
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testInvalidTooManyArguments(): void
@@ -459,10 +616,13 @@ final class ConverterTest extends TestCase
             "2 passed and exactly 1 expected."
         );
 
+        /** @psalm-suppress UndefinedMagicMethod */
         Converter::invalid(1, 2);
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testInvalidUndefinedMethod(): void
@@ -473,10 +633,13 @@ final class ConverterTest extends TestCase
             "Call to undefined method BVP\Converter\Converters\CoreConverter::invalid()."
         );
 
+        /** @psalm-suppress UndefinedMagicMethod */
         Converter::invalid(1);
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testGetInstance(): void
@@ -486,6 +649,8 @@ final class ConverterTest extends TestCase
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testCreateInstance(): void
@@ -495,6 +660,8 @@ final class ConverterTest extends TestCase
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testResetInstance(): void
