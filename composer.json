@@ -1,7 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/converter",
-    "description": "The BVP Converter for Boatrace.",
+    "description": "Converter for Boatrace Venture Project",
     "keywords": [
         "boatrace",
         "converter",
@@ -21,9 +21,9 @@
     },
     "require": {
         "php": "^8.2",
-        "bvp/prefecture": "^5.0",
-        "bvp/stadium": "^5.0",
-        "bvp/trimmer": "^5.0",
+        "bvp/prefecture": "^0.1",
+        "bvp/stadium": "^0.1",
+        "bvp/trimmer": "^0.1",
         "shimomo/helper": "^0.1"
     },
     "require-dev": {
