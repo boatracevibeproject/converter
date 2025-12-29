@@ -79,7 +79,7 @@ final class CoreParserDataProvider
      *
      * @return array
      */
-    public static function parseWindProvider(): array
+    public static function parseWindSpeedProvider(): array
     {
         return [
             ['arguments' => ['2m'], 'expected' => 2],

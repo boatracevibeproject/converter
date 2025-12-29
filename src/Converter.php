@@ -15,7 +15,7 @@ namespace BVP\Converter;
  * @psalm-method static ?int<0, 4> parseFlyingCount(?string $value)
  * @psalm-method static ?int<0, 4> parseLateCount(?string $value)
  * @psalm-method static ?float parseStartTiming(?string $value)
- * @psalm-method static ?int<0, max> parseWind(?string $value)
+ * @psalm-method static ?int<0, max> parseWindSpeed(?string $value)
  * @psalm-method static ?int<1, 17> parseWindDirectionNumber(?string $value)
  * @psalm-method static ?int<0, max> parseWave(?string $value)
  * @psalm-method static ?float parseTemperature(?string $value)

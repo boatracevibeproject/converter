@@ -90,7 +90,7 @@ final class CoreParser implements CoreParserInterface
      * @return ?int
      */
     #[\Override]
-    public function parseWind(?string $value): ?int
+    public function parseWindSpeed(?string $value): ?int
     {
         if ($value === null) { return null; }
         $value = $this->converter->convertToString($value);

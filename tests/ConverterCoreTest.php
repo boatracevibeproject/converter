@@ -191,10 +191,10 @@ final class ConverterCoreTest extends TestCase
      * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterDataProvider::class, 'parseWindProvider')]
-    public function testParseWind(array $arguments, ?int $expected): void
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseWindSpeedProvider')]
+    public function testParseWindSpeed(array $arguments, ?int $expected): void
     {
-        $this->assertSame($expected, $this->converter->parseWind(...$arguments));
+        $this->assertSame($expected, $this->converter->parseWindSpeed(...$arguments));
     }
 
     /**

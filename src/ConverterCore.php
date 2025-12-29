@@ -66,7 +66,7 @@ use BVP\Converter\Converters\WindDirectionConverter;
  * @method ?int<0, 4> parseFlyingCount(?string $value)
  * @method ?int<0, 4> parseLateCount(?string $value)
  * @method ?float parseStartTiming(?string $value)
- * @method ?int<0, max> parseWind(?string $value)
+ * @method ?int<0, max> parseWindSpeed(?string $value)
  * @method ?int<1, 17> parseWindDirectionNumber(?string $value)
  * @method ?int<0, max> parseWave(?string $value)
  * @method ?float parseTemperature(?string $value)
