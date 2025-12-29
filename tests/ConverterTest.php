@@ -203,10 +203,10 @@ final class ConverterTest extends TestCase
      * @param ?int $expected
      * @return void
      */
-    #[DataProviderExternal(ConverterDataProvider::class, 'parseWaveProvider')]
-    public function testParseWave(array $arguments, ?int $expected): void
+    #[DataProviderExternal(ConverterDataProvider::class, 'parseWaveHeightProvider')]
+    public function testParseWaveHeight(array $arguments, ?int $expected): void
     {
-        $this->assertSame($expected, Converter::parseWave(...$arguments));
+        $this->assertSame($expected, Converter::parseWaveHeight(...$arguments));
     }
 
     /**

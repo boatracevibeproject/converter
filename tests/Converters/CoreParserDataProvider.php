@@ -115,7 +115,7 @@ final class CoreParserDataProvider
      *
      * @return array
      */
-    public static function parseWaveProvider(): array
+    public static function parseWaveHeightProvider(): array
     {
         return [
             ['arguments' => ['2cm'], 'expected' => 2],

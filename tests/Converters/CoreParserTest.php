@@ -119,10 +119,10 @@ final class CoreParserTest extends TestCase
      * @param int|null $expected
      * @return void
      */
-    #[DataProviderExternal(CoreParserDataProvider::class, 'parseWaveProvider')]
-    public function testParseWave(array $arguments, ?int $expected): void
+    #[DataProviderExternal(CoreParserDataProvider::class, 'parseWaveHeightProvider')]
+    public function testParseWaveHeight(array $arguments, ?int $expected): void
     {
-        $this->assertSame($expected, $this->parser->parseWave(...$arguments));
+        $this->assertSame($expected, $this->parser->parseWaveHeight(...$arguments));
     }
 
     /**

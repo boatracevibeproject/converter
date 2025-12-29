@@ -68,7 +68,7 @@ use BVP\Converter\Converters\WindDirectionConverter;
  * @method ?float parseStartTiming(?string $value)
  * @method ?int<0, max> parseWindSpeed(?string $value)
  * @method ?int<1, 17> parseWindDirectionNumber(?string $value)
- * @method ?int<0, max> parseWave(?string $value)
+ * @method ?int<0, max> parseWaveHeight(?string $value)
  * @method ?float parseTemperature(?string $value)
  * @method ?int<1, 16> convertToPlaceNumber(int|string|null $value)
  * @method ?non-empty-string convertToPlaceName(int|string|null $value)

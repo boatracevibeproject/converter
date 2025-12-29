@@ -17,7 +17,7 @@ namespace BVP\Converter;
  * @psalm-method static ?float parseStartTiming(?string $value)
  * @psalm-method static ?int<0, max> parseWindSpeed(?string $value)
  * @psalm-method static ?int<1, 17> parseWindDirectionNumber(?string $value)
- * @psalm-method static ?int<0, max> parseWave(?string $value)
+ * @psalm-method static ?int<0, max> parseWaveHeight(?string $value)
  * @psalm-method static ?float parseTemperature(?string $value)
  * @psalm-method static ?int<1, 16> convertToPlaceNumber(int|string|null $value)
  * @psalm-method static ?non-empty-string convertToPlaceName(int|string|null $value)

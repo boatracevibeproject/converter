@@ -61,7 +61,7 @@ interface CoreParserInterface extends ConverterInterface
      * @param ?string $value
      * @return ?int
      */
-    public function parseWave(?string $value): ?int;
+    public function parseWaveHeight(?string $value): ?int;
 
     /**
      * @psalm-param ?string $value
