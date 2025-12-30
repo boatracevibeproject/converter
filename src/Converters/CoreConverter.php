@@ -26,15 +26,15 @@ final class CoreConverter implements CoreConverterInterface
 
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return ?string
+     * @psalm-return ?int
      *
      * @param int|float|string|null $value
-     * @return ?string
+     * @return ?int
      */
     #[\Override]
-    public function convertToString(int|float|string|null $value): ?string
+    public function convertToInt(int|float|string|null $value): ?int
     {
-        return is_null($value) ? null : mb_convert_kana((string) $value, 'KVas', 'UTF-8');
+        return is_null($value) ? null : (int) $value;
     }
 
     /**
@@ -52,15 +52,15 @@ final class CoreConverter implements CoreConverterInterface
 
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return ?int
+     * @psalm-return ?string
      *
      * @param int|float|string|null $value
-     * @return ?int
+     * @return ?string
      */
     #[\Override]
-    public function convertToInt(int|float|string|null $value): ?int
+    public function convertToString(int|float|string|null $value): ?string
     {
-        return is_null($value) ? null : (int) $value;
+        return is_null($value) ? null : mb_convert_kana((string) $value, 'KVas', 'UTF-8');
     }
 
     /**

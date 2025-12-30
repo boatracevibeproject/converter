@@ -11,12 +11,12 @@ interface CoreConverterInterface extends ConverterInterface
 {
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return ?string
+     * @psalm-return ?int
      *
      * @param int|float|string|null $value
-     * @return ?string
+     * @return ?int
      */
-    public function convertToString(int|float|string|null $value): ?string;
+    public function convertToInt(int|float|string|null $value): ?int;
 
     /**
      * @psalm-param int|float|string|null $value
@@ -29,10 +29,10 @@ interface CoreConverterInterface extends ConverterInterface
 
     /**
      * @psalm-param int|float|string|null $value
-     * @psalm-return ?int
+     * @psalm-return ?string
      *
      * @param int|float|string|null $value
-     * @return ?int
+     * @return ?string
      */
-    public function convertToInt(int|float|string|null $value): ?int;
+    public function convertToString(int|float|string|null $value): ?string;
 }
