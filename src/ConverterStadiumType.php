@@ -17,7 +17,7 @@ namespace BVP\Converter;
  *
  * @author shimomo
  */
-final class StadiumType
+final class ConverterStadiumType
 {
     //
 }

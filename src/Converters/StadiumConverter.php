@@ -8,7 +8,7 @@ use BVP\Stadium\Stadium;
 use BVP\Trimmer\Trimmer;
 
 /**
- * @psalm-import-type Stadium from \BVP\Converter\StadiumType as StadiumType
+ * @psalm-import-type Stadium from \BVP\Converter\ConverterStadiumType as StadiumType
  *
  * @author shimomo
  */
