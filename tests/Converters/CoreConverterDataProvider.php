@@ -12,7 +12,7 @@ final class CoreConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int|float|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array
@@ -33,7 +33,7 @@ final class CoreConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int|float|non-empty-string|null>,
-     *     expected: int|null
+     *     expected: ?int
      * }>
      *
      * @return array
@@ -54,7 +54,7 @@ final class CoreConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int|float|non-empty-string|null>,
-     *     expected: float|null
+     *     expected: ?float
      * }>
      *
      * @return array
@@ -74,8 +74,8 @@ final class CoreConverterDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array

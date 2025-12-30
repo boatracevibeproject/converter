@@ -27,10 +27,10 @@ abstract class BaseConverter implements BaseConverterInterface
 
     /**
      * @psalm-param int|string|null $value
-     * @psalm-return array<array-key, mixed>|null
+     * @psalm-return ?array<array-key, mixed>
      *
      * @param int|string|null $value
-     * @return array|null
+     * @return ?array
      */
     protected function search(int|string|null $value): ?array
     {

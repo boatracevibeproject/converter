@@ -12,7 +12,7 @@ final class WeatherConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
-     *     expected: int<1, 5>|null
+     *     expected: ?int<1, 5>
      * }>
      *
      * @return array
@@ -31,7 +31,7 @@ final class WeatherConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array
@@ -50,7 +50,7 @@ final class WeatherConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 5>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array

@@ -34,11 +34,11 @@ final class CoreConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int|float|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToStringProvider')]
@@ -49,11 +49,11 @@ final class CoreConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int|float|non-empty-string|null> $arguments
-     * @psalm-param int|null $expected
+     * @psalm-param ?int $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToIntProvider')]
@@ -64,11 +64,11 @@ final class CoreConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int|float|non-empty-string|null> $arguments
-     * @psalm-param float|null $expected
+     * @psalm-param ?float $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param float|null $expected
+     * @param ?float $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToFloatProvider')]
@@ -78,12 +78,12 @@ final class CoreConverterTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(CoreConverterDataProvider::class, 'convertToNameProvider')]

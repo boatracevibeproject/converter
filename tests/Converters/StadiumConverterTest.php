@@ -37,11 +37,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param int<1, 24>|null $expected
+     * @psalm-param ?int<1, 24> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumNumberProvider')]
@@ -52,11 +52,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumNameProvider')]
@@ -67,11 +67,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumShortNameProvider')]
@@ -82,11 +82,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumHiraganaNameProvider')]
@@ -97,11 +97,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumKatakanaNameProvider')]
@@ -112,11 +112,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumEnglishNameProvider')]
@@ -127,11 +127,11 @@ final class StadiumConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 24>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(StadiumConverterDataProvider::class, 'convertToStadiumUrlProvider')]

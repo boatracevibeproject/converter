@@ -11,8 +11,8 @@ final class CoreParserDataProvider
 {
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: int<0, 4>|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, 4>
      * }>
      *
      * @return array
@@ -30,8 +30,8 @@ final class CoreParserDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: int<0, 4>|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, 4>
      * }>
      *
      * @return array
@@ -49,8 +49,8 @@ final class CoreParserDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: float|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?float
      * }>
      *
      * @return array
@@ -73,8 +73,8 @@ final class CoreParserDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: int<0, max>|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, max>
      * }>
      *
      * @return array
@@ -91,8 +91,8 @@ final class CoreParserDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: int<1, 17>|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<1, 17>
      * }>
      *
      * @return array
@@ -109,8 +109,8 @@ final class CoreParserDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: int<0, max>|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?int<0, max>
      * }>
      *
      * @return array
@@ -127,8 +127,8 @@ final class CoreParserDataProvider
 
     /**
      * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string|null>,
-     *     expected: float|null
+     *     arguments: non-empty-list<?non-empty-string>,
+     *     expected: ?float
      * }>
      *
      * @return array

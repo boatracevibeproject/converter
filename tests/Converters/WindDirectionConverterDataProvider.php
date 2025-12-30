@@ -12,7 +12,7 @@ final class WindDirectionConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 17>|non-empty-string|null>,
-     *     expected: int<1, 17>|null
+     *     expected: ?int<1, 17>
      * }>
      *
      * @return array
@@ -30,7 +30,7 @@ final class WindDirectionConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 17>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array

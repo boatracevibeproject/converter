@@ -37,11 +37,11 @@ final class ClassConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 4>|non-empty-string|null> $arguments
-     * @psalm-param int<1, 4>|null $expected
+     * @psalm-param ?int<1, 4> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(ClassConverterDataProvider::class, 'convertToClassNumberProvider')]
@@ -52,11 +52,11 @@ final class ClassConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 4>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(ClassConverterDataProvider::class, 'convertToClassNameProvider')]
@@ -67,11 +67,11 @@ final class ClassConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 4>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(ClassConverterDataProvider::class, 'convertToClassShortNameProvider')]

@@ -12,7 +12,7 @@ final class PrefectureConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
-     *     expected: int<1, 47>|null
+     *     expected: ?int<1, 47>
      * }>
      *
      * @return array
@@ -34,7 +34,7 @@ final class PrefectureConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array
@@ -56,7 +56,7 @@ final class PrefectureConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array
@@ -78,7 +78,7 @@ final class PrefectureConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array
@@ -100,7 +100,7 @@ final class PrefectureConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array
@@ -122,7 +122,7 @@ final class PrefectureConverterDataProvider
     /**
      * @psalm-return non-empty-list<array{
      *     arguments: non-empty-list<int<1, 47>|non-empty-string|null>,
-     *     expected: non-empty-string|null
+     *     expected: ?non-empty-string
      * }>
      *
      * @return array

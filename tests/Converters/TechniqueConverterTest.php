@@ -37,11 +37,11 @@ final class TechniqueConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 6>|non-empty-string|null> $arguments
-     * @psalm-param int<1, 6>|null $expected
+     * @psalm-param ?int<1, 6> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(TechniqueConverterDataProvider::class, 'convertToTechniqueNumberProvider')]
@@ -52,11 +52,11 @@ final class TechniqueConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 6>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(TechniqueConverterDataProvider::class, 'convertToTechniqueNameProvider')]
@@ -67,11 +67,11 @@ final class TechniqueConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 6>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(TechniqueConverterDataProvider::class, 'convertToTechniqueShortNameProvider')]

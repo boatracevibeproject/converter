@@ -36,12 +36,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param int<0, 4>|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?int<0, 4> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseFlyingCountProvider')]
@@ -51,12 +51,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param int<0, 4>|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?int<0, 4> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseLateCountProvider')]
@@ -66,12 +66,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param float|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?float $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param float|null $expected
+     * @param ?float $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseStartTimingProvider')]
@@ -81,12 +81,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param int<0, max>|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?int<0, max> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseWindSpeedProvider')]
@@ -96,12 +96,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param int<1, 17>|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?int<1, 17> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseWindDirectionNumberProvider')]
@@ -111,12 +111,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param int<0, max>|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?int<0, max> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseWaveHeightProvider')]
@@ -126,12 +126,12 @@ final class CoreParserTest extends TestCase
     }
 
     /**
-     * @psalm-param non-empty-list<non-empty-string|null> $arguments
-     * @psalm-param float|null $expected
+     * @psalm-param non-empty-list<?non-empty-string> $arguments
+     * @psalm-param ?float $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param float|null $expected
+     * @param ?float $expected
      * @return void
      */
     #[DataProviderExternal(CoreParserDataProvider::class, 'parseTemperatureProvider')]

@@ -37,11 +37,11 @@ final class WeatherConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 5>|non-empty-string|null> $arguments
-     * @psalm-param int<1, 5>|null $expected
+     * @psalm-param ?int<1, 5> $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param int|null $expected
+     * @param ?int $expected
      * @return void
      */
     #[DataProviderExternal(WeatherConverterDataProvider::class, 'convertToWeatherNumberProvider')]
@@ -52,11 +52,11 @@ final class WeatherConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 5>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(WeatherConverterDataProvider::class, 'convertToWeatherNameProvider')]
@@ -67,11 +67,11 @@ final class WeatherConverterTest extends TestCase
 
     /**
      * @psalm-param non-empty-list<int<1, 5>|non-empty-string|null> $arguments
-     * @psalm-param non-empty-string|null $expected
+     * @psalm-param ?non-empty-string $expected
      * @psalm-return void
      *
      * @param array $arguments
-     * @param string|null $expected
+     * @param ?string $expected
      * @return void
      */
     #[DataProviderExternal(WeatherConverterDataProvider::class, 'convertToWeatherShortNameProvider')]
