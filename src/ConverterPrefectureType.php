@@ -19,7 +19,7 @@ namespace BVP\Converter;
  *
  * @author shimomo
  */
-final class PrefectureType
+final class ConverterPrefectureType
 {
     //
 }

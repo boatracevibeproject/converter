@@ -8,7 +8,7 @@ use BVP\Prefecture\Prefecture;
 use BVP\Trimmer\Trimmer;
 
 /**
- * @psalm-import-type Prefecture from \BVP\Converter\PrefectureType as PrefectureType
+ * @psalm-import-type Prefecture from \BVP\Converter\ConverterPrefectureType as PrefectureType
  *
  * @author shimomo
  */
