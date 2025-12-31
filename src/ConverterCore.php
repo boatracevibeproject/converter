@@ -189,6 +189,7 @@ final class ConverterCore implements ConverterCoreInterface
      * @param string $coreConverterClass
      * @return \BVP\Converter\Converters\ConverterInterface
      */
+    // phpcs:ignore Generic.Files.LineLength
     private function getConverterInstance(string $specificConverterClass, string $coreConverterClass): ConverterInterface
     {
         /** @psalm-suppress UnsafeInstantiation */

@@ -31,10 +31,13 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseFlyingCount(?string $value): ?int
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::ltrim($value, 'F');
+        $value = Trimmer::ltrim($this->converter->convertToString($value), 'F');
+
         /** @psalm-var int<0, max> */
         return $this->converter->convertToInt($value);
     }
@@ -49,10 +52,13 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseLateCount(?string $value): ?int
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::ltrim($value, 'L');
+        $value = Trimmer::ltrim($this->converter->convertToString($value), 'L');
+
         /** @psalm-var int<0, max> */
         return $this->converter->convertToInt($value);
     }
@@ -67,10 +73,12 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseStartTiming(?string $value): ?float
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::trim($value);
+        $value = Trimmer::trim($this->converter->convertToString($value));
         if (!preg_match('/(L|F\.\d{2}|0?\.\d{2})/u', $value)) {
             return null;
         }
@@ -92,10 +100,13 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseWindSpeed(?string $value): ?int
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::rtrim($value, 'm');
+        $value = Trimmer::rtrim($this->converter->convertToString($value), 'm');
+
         /** @psalm-var int<0, max> */
         return $this->converter->convertToInt($value);
     }
@@ -110,10 +121,12 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseWindDirectionNumber(?string $value): ?int
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::trim($value);
+        $value = Trimmer::trim($this->converter->convertToString($value));
         if (preg_match('/is-wind(\d+)/u', $value, $matches)) {
             /** @psalm-var int<1, 17> */
             return $this->converter->convertToInt($matches[1]);
@@ -132,10 +145,13 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseWaveHeight(?string $value): ?int
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::rtrim($value, 'cm');
+        $value = Trimmer::rtrim($this->converter->convertToString($value), 'cm');
+
         /** @psalm-var int<0, max> */
         return $this->converter->convertToInt($value);
     }
@@ -150,10 +166,13 @@ final class CoreParser implements CoreParserInterface
     #[\Override]
     public function parseTemperature(?string $value): ?float
     {
-        if ($value === null) { return null; }
-        $value = $this->converter->convertToString($value);
+        if ($value === null) {
+            return null;
+        }
+
         /** @psalm-var string */
-        $value = Trimmer::rtrim($value, '℃');
+        $value = Trimmer::rtrim($this->converter->convertToString($value), '℃');
+
         return $this->converter->convertToFloat($value);
     }
 }
