@@ -21,9 +21,9 @@
     },
     "require": {
         "php": "^8.2",
-        "bvp/prefecture": "^0.1",
-        "bvp/stadium": "^0.1",
-        "bvp/trimmer": "^0.1",
+        "bvp/prefecture": "^6.0",
+        "bvp/stadium": "^6.0",
+        "bvp/trimmer": "^6.0",
         "shimomo/helper": "^0.1"
     },
     "require-dev": {
