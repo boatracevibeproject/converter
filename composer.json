@@ -1,7 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/converter",
-    "description": "Converter for Boatrace Venture Project",
+    "description": "BVP Converter：場・級別・天候・風向・決まり手などのコードと名称を変換する PHP ライブラリ | PHP library for converting boatrace codes and names",
     "keywords": [
         "boatrace",
         "converter",
@@ -16,8 +16,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/shimomo/bvp-converter/issues",
-        "source": "https://github.com/shimomo/bvp-converter"
+        "issues": "https://github.com/boatracevibeproject/converter/issues",
+        "source": "https://github.com/boatracevibeproject/converter"
     },
     "require": {
         "php": "^8.2",
