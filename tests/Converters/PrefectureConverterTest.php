@@ -41,6 +41,17 @@ final class PrefectureConverterTest extends TestCase
     }
 
     /**
+     * @return void
+     */
+    public function testConvertToPrefectureNumberPrefersExactMatch(): void
+    {
+        foreach (\BVP\Prefecture\Prefecture::all() as $number => $prefecture) {
+            $this->assertSame($number, $this->converter->convertToPrefectureNumber($prefecture['name']));
+            $this->assertSame($number, $this->converter->convertToPrefectureNumber($prefecture['short_name']));
+        }
+    }
+
+    /**
      * @param  array        $arguments
      * @param  string|null  $expected
      * @return void
