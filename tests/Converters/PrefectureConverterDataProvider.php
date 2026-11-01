@@ -21,6 +21,11 @@ final class PrefectureConverterDataProvider
             ['arguments' => ['とうきょうと'], 'expected' => 13],
             ['arguments' => ['トウキョウト'], 'expected' => 13],
             ['arguments' => ['tokyo'], 'expected' => 13],
+            ['arguments' => [26], 'expected' => 26],
+            ['arguments' => ['京都府'], 'expected' => 26],
+            ['arguments' => ['京都'], 'expected' => 26],
+            ['arguments' => ['大阪'], 'expected' => 27],
+            ['arguments' => ['兵庫'], 'expected' => 28],
             ['arguments' => ['競艇'], 'expected' => null],
             ['arguments' => [null], 'expected' => null],
         ];

@@ -80,6 +80,16 @@ class PrefectureConverter extends BaseConverter implements PrefectureConverterIn
             return null;
         }
 
+        // byName() falls back to partial matching, so "京都" would hit "東京都"
+        // before byShortName() is tried. Look for an exact match first.
+        foreach (Prefecture::all() as $prefecture) {
+            foreach (['number', 'name', 'short_name', 'hiragana_name', 'katakana_name', 'english_name'] as $key) {
+                if ((string) $prefecture[$key] === (string) $value) {
+                    return $prefecture;
+                }
+            }
+        }
+
         return Prefecture::byNumber($value)
             ?? Prefecture::byName($value)
             ?? Prefecture::byShortName($value)
