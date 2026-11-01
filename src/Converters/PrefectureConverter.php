@@ -118,6 +118,17 @@ final class PrefectureConverter extends BaseConverter implements PrefectureConve
             $value = (int) Trimmer::trim($this->converter->convertToInt($value));
         }
 
+        // byName() falls back to partial matching, so "京都" would hit "東京都"
+        // before byShortName() is tried. Look for an exact match first.
+        foreach (Prefecture::all() as $prefecture) {
+            foreach (['number', 'name', 'short_name', 'hiragana_name', 'katakana_name', 'english_name'] as $key) {
+                if ((string) $prefecture[$key] === (string) $value) {
+                    /** @psalm-var PrefectureType */
+                    return $prefecture;
+                }
+            }
+        }
+
         /** @psalm-var PrefectureType */
         return Prefecture::byNumber($value)
             ?? Prefecture::byName($value)
